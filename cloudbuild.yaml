@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    id: build
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        if [[ "$BRANCH_NAME" == "build/initial" ]]; then
+          docker build -t gcr.io/$PROJECT_ID/flatbuffers-builder .
+          docker push gcr.io/$PROJECT_ID/flatbuffers-builder
+        fi
