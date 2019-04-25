@@ -1,5 +1,5 @@
 {
-  "automerge": true,
+  "automerge": false,
   "automergeType": "pr",
   "commitMessageAction": "update",
   "rangeStrategy": "bump",
