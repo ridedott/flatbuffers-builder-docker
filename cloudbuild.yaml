@@ -5,7 +5,7 @@ steps:
     args:
       - '-c'
       - |
-        if [[ "$BRANCH_NAME" == "build/initial" ]]; then
+        if [[ "$BRANCH_NAME" == "master" ]]; then
           docker build -t gcr.io/$PROJECT_ID/flatbuffers-builder .
           docker push gcr.io/$PROJECT_ID/flatbuffers-builder
         fi
