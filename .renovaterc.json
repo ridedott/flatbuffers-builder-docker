@@ -1,0 +1,8 @@
+{
+  "automerge": false,
+  "automergeType": "pr",
+  "commitMessageAction": "update",
+  "rangeStrategy": "bump",
+  "rebaseStalePrs": true,
+  "recreateClosed": true
+}
