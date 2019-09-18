@@ -1,7 +1,7 @@
 FROM alpine as build
 
-ARG FLATBUFFERS_VERSION=v1.10.0
-ARG FLATCC_VERSION=v0.5.3
+ARG FLATBUFFERS_VERSION=v1.11.0
+ARG FLATCC_VERSION=v0.6.0
 
 RUN apk --no-cache add git clang cmake alpine-sdk bash
 
@@ -17,7 +17,7 @@ RUN git clone --branch $FLATCC_VERSION https://github.com/dvidelabs/flatcc.git &
 
 FROM alpine
 
-# Required dependency for the binaries
+# Required dependency for the binaries.
 RUN apk --no-cache add libstdc++
 
 COPY --from=build /flatbuffers/flatc /usr/local/bin/
