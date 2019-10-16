@@ -1,7 +1,7 @@
 # flatbuffers-builder-docker
 
 [![license: MIT](https://img.shields.io/github/license/ridedott/flatbuffers-builder-docker)](https://github.com/ridedott/flatbuffers-builder-docker/blob/master/LICENSE)
-[![GitHub Actions Status](https://github.com/ridedott/flatbuffers-builder-docker/workflows/Continuous%20Integration/badge.svg?branch=master)](https://github.com/ridedott/dependabot-auto-merge-action/actions)
+[![GitHub Actions Status](https://github.com/ridedott/flatbuffers-builder-docker/workflows/Continuous%20Deployment/badge.svg?branch=master)](https://github.com/ridedott/dependabot-auto-merge-action/actions)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 A Docker image running with FlatBuffers compilers.
