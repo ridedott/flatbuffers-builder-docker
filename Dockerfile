@@ -1,6 +1,6 @@
 FROM alpine as build
 
-ARG FLATBUFFERS_VERSION=master
+ARG FLATBUFFERS_VERSION=v1.12.0
 ARG FLATCC_VERSION=v0.6.0
 
 RUN apk --no-cache add alpine-sdk bash clang cmake git
