@@ -1,9 +1,6 @@
 name: Continuous Delivery
 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
   release:
@@ -30,17 +27,11 @@ jobs:
         name: Release
         run: |
           # GitHub Package Registry
-          echo $GITHUB_REGISTRY_PASSWORD | \
-            docker login docker.pkg.github.com \
-            --username $GITHUB_REGISTRY_USERNAME \
-            --password-stdin
+          echo $GITHUB_REGISTRY_PASSWORD | docker login docker.pkg.github.com --username $GITHUB_REGISTRY_USERNAME --password-stdin
           docker push \
             docker.pkg.github.com/ridedott/flatbuffers-builder-docker/flatbuffers-builder:latest
 
           # Docker Hub
-          echo $DOCKER_HUB_REGISTRY_PASSWORD | \
-            docker login registry.hub.docker.com \
-            --username $DOCKER_HUB_REGISTRY_USERNAME \
-            --password-stdin
+          echo $DOCKER_HUB_REGISTRY_PASSWORD | docker login registry.hub.docker.com --username $DOCKER_HUB_REGISTRY_USERNAME --password-stdin
           docker push \
             registry.hub.docker.com/ridedott/flatbuffers-builder:latest
