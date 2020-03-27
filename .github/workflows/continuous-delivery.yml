@@ -43,4 +43,4 @@ jobs:
             --username $DOCKER_HUB_REGISTRY_USERNAME \
             --password-stdin
           docker push \
-            registry.hub.docker.com/flatbuffers-builder-docker/flatbuffers-builder:latest
+            registry.hub.docker.com/ridedott/flatbuffers-builder:latest
