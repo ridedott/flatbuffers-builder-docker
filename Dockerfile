@@ -2,7 +2,7 @@ FROM alpine as build
 
 RUN apk --no-cache add alpine-sdk bash clang cmake git
 
-ARG FLATBUFFERS_VERSION=master
+ARG FLATBUFFERS_VERSION=v1.12.0
 ARG FLATCC_VERSION=v0.6.0
 
 RUN git clone --branch $FLATBUFFERS_VERSION https://github.com/google/flatbuffers && \
