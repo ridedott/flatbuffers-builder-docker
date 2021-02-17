@@ -1,4 +1,4 @@
-FROM alpine as build
+FROM alpine:3.10.2 as build
 
 RUN apk --no-cache add alpine-sdk bash clang cmake git
 
@@ -17,7 +17,7 @@ RUN git clone --branch $FLATCC_VERSION https://github.com/dvidelabs/flatcc.git &
   scripts/initbuild.sh make && \
   scripts/build.sh
 
-FROM alpine
+FROM alpine:3.10.2
 
 # Required dependency for the binaries.
 RUN apk --no-cache add libstdc++
