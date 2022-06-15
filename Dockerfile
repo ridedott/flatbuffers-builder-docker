@@ -2,11 +2,13 @@ FROM alpine:latest as build
 
 RUN apk --no-cache add alpine-sdk bash clang cmake git
 
-ARG FLATBUFFERS_VERSION=v2.0.0
-ARG FLATCC_VERSION=v0.6.0
+# For the time being lock the commit version until the new release.
+ARG FLATBUFFERS_VERSION=b4647b
+ARG FLATCC_VERSION=v0.6.1
 
-RUN git clone --branch $FLATBUFFERS_VERSION https://github.com/google/flatbuffers && \
+RUN git clone https://github.com/google/flatbuffers && \
   cd /flatbuffers && \
+  git reset --hard $FLATBUFFERS_VERSION && \
   CC=/usr/bin/clang \
   CXX=/usr/bin/clang++ \
   cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release && \
