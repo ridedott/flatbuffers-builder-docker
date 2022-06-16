@@ -33,6 +33,6 @@ jobs:
           docker buildx build \
             --output=type=registry \
             --platform linux/amd64,linux/arm64 \
-            --tag ghcr.io/ridedott/flatbuffers-builder:latest \
+            --tag ghcr.io/ridedott/flatbuffers-builder-docker/flatbuffers-builder:latest \
             --tag registry.hub.docker.com/ridedott/flatbuffers-builder:latest \
             .
