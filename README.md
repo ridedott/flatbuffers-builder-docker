@@ -9,7 +9,7 @@ A Docker image running with FlatBuffers compilers.
 ## Usage
 
 ```bash
-docker pull docker.pkg.github.com/ridedott/flatbuffers-builder-docker/flatbuffers-builder:latest
+docker pull ghcr.io/ridedott/flatbuffers-builder-docker/flatbuffers-builder:latest
 docker run ridedott/flatbuffers-builder:latest
 ```
 
