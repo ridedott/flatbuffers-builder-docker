@@ -13,13 +13,6 @@ docker pull ghcr.io/ridedott/flatbuffers-builder-docker/flatbuffers-builder:late
 docker run ridedott/flatbuffers-builder:latest
 ```
 
-Alternatively, one can also use Docker Hub:
-
-```bash
-docker pull ridedott/flatbuffers-builder
-docker run ridedott/flatbuffers-builder:latest
-```
-
 ## Getting Started
 
 These instructions will get you an instance of the flatbuffers-builder running
