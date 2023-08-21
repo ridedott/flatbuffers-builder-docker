@@ -22,8 +22,6 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - env:
           DOCKER_BUILDKIT: 1
-          DOCKER_HUB_REGISTRY_USERNAME: ${{ secrets.DOCKER_HUB_REGISTRY_USERNAME }}
-          DOCKER_HUB_REGISTRY_PASSWORD: ${{ secrets.DOCKER_HUB_REGISTRY_PASSWORD }}
           GITHUB_REGISTRY_USERNAME: ${{ github.actor }}
           GITHUB_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         name: Build and release
@@ -31,12 +29,8 @@ jobs:
           # GitHub Packages Registry
           echo $GITHUB_REGISTRY_PASSWORD | docker login ghcr.io --username $GITHUB_REGISTRY_USERNAME --password-stdin
 
-          # Docker Hub
-          echo $DOCKER_HUB_REGISTRY_PASSWORD | docker login registry.hub.docker.com --username $DOCKER_HUB_REGISTRY_USERNAME --password-stdin
-
           docker buildx build \
             --output=type=registry \
             --platform linux/amd64,linux/arm64 \
             --tag ghcr.io/ridedott/flatbuffers-builder-docker/flatbuffers-builder:latest \
-            --tag registry.hub.docker.com/ridedott/flatbuffers-builder:latest \
             .
