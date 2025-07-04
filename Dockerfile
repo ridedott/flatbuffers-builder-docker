@@ -1,9 +1,9 @@
-FROM alpine:3.16.0 as build
+FROM alpine:3.22.0 as build
 
 RUN apk --no-cache add alpine-sdk bash clang cmake git
 
 # For the time being lock the commit version until the new release.
-ARG FLATBUFFERS_VERSION=b4647b
+ARG FLATBUFFERS_VERSION=6fe8afb3b6179ff16d314e12b54b333a22ebe00a
 ARG FLATCC_VERSION=v0.6.1
 
 RUN git clone https://github.com/google/flatbuffers && \
@@ -19,7 +19,7 @@ RUN git clone --branch $FLATCC_VERSION https://github.com/dvidelabs/flatcc.git &
   scripts/initbuild.sh make && \
   scripts/build.sh
 
-FROM alpine:3.16.0
+FROM alpine:3.22.0
 
 # Required dependency for the binaries.
 RUN apk --no-cache add libstdc++
