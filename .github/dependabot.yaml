@@ -10,6 +10,10 @@ updates:
     package-ecosystem: github-actions
     schedule:
       interval: daily
+    cooldown:
+      default-days: 30
+      exclude:
+        - 'ridedott/*'
   - allow:
       - dependency-type: direct
     commit-message:
@@ -20,3 +24,5 @@ updates:
     package-ecosystem: docker
     schedule:
       interval: daily
+    cooldown:
+      default-days: 30
